@@ -188,7 +188,7 @@
   }
 }
 </style> -->
- <div class="col-lg-4 d-flex justify-content-center align-items-center">
+<div class="col-lg-4 d-flex justify-content-center align-items-center">
   <div class="circle-frame">
     <img 
       src="img/home.jpg" 
@@ -199,78 +199,82 @@
 </div>
 
 <style>
-
+/* === Animated Circular Border === */
 .circle-frame {
   position: relative;
   border-radius: 50%;
-  padding: 5px; /* Border thickness */
+  padding: 8px; /* Slightly thicker border */
   background: linear-gradient(270deg, #f74780, #ffffff, #c9c9c9);
   background-size: 400% 400%;
-  animation: borderFlow 7s linear infinite; /* Moves gradient slowly */
+  animation: borderFlow 7s linear infinite;
   display: inline-block;
   overflow: hidden;
   transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
 
-/* === Circle image (adjusted to show full person, less sky) === */
+/* === Circle Image (Brighter + Full Visible) === */
 .circle-image {
   width: 100%;
-  max-width: 550px;
+  max-width: 700px; /* Increased size for desktop */
   aspect-ratio: 1 / 1;
-  object-fit: cover; /* Crop to fill the circle nicely */
-  object-position: center 70%; /* Moves focus slightly down — shows more legs, less sky */
+  object-fit: cover; /* Keeps proportions nicely inside circle */
+  object-position: center 70%; /* Focus down a bit (less sky, more body) */
   border-radius: 50%;
   display: block;
   transition: transform 0.6s ease, filter 0.6s ease;
+  filter: brightness(1.05) contrast(1.05); /* Brighter + no dull look */
 }
 
 /* === Hover Effects === */
 .circle-frame:hover .circle-image {
-  transform: scale(1.05); /* Zoom on hover */
-  filter: brightness(1.1);
+  transform: scale(1.07);
+  filter: brightness(1.15) contrast(1.1);
 }
 
 .circle-frame:hover {
-  transform: scale(1.03);
-  box-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
+  transform: scale(1.04);
+  box-shadow: 0 0 40px rgba(247, 71, 128, 0.4);
 }
 
-/* === Animated Gradient Border Flow === */
+/* === Animated Gradient Border Movement === */
 @keyframes borderFlow {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
 
-/* === Responsiveness (for all screen sizes) === */
+/* === Responsive Scaling === */
 @media (max-width: 992px) {
   .circle-image {
-    max-width: 450px;
-    object-position: center 70%; /* Keep the lower focus on smaller screens */
+    max-width: 550px;
+    object-position: center 70%;
   }
 }
+
 @media (max-width: 768px) {
   .circle-image {
-    max-width: 340px;
-    object-position: center 65%;
-  }
-}
-@media (max-width: 480px) {
-  .circle-image {
-    max-width: 260px;
+    max-width: 380px;
     object-position: center 65%;
   }
 }
 
-/* === Desktop alignment and bottom visibility fix === */
+@media (max-width: 480px) {
+  .circle-image {
+    max-width: 280px;
+    object-position: center 65%;
+  }
+}
+
+/* === Desktop Alignment + Bottom Visibility === */
 @media (min-width: 992px) {
   .col-lg-4 {
     justify-content: center;
     padding-top: 20px;
-    padding-bottom: 100px; /* Keeps lower part visible */
+    padding-bottom: 120px; /* Ensures lower part is visible */
   }
 }
-</style>    
+</style>
+   
     </div>
 </div>
 <!-- Hero Header End -->
@@ -1263,6 +1267,7 @@ function navHighlight() {
     </body>
 
 </html>
+
 
 
 
