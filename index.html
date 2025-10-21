@@ -148,94 +148,47 @@
             
         </div>
         
-            <div class="cracker-bg">
-  <div class="col-lg-4 wow fadeInRight d-flex justify-content-center align-items-center" data-wow-delay="0.2s">
-    <div class="image-container">
-      <img src="img/home.jpg" alt="Home Image" class="img-fluid circle-image">
-      <div class="crackers"></div>
-    </div>
-  </div>
+          <div class="col-lg-4 wow fadeInRight d-flex justify-content-center align-items-center" data-wow-delay="0.2s">
+  <img 
+    src="img/home.jpg" 
+    alt="Home Image"
+    class="img-fluid circle-image"
+  >
 </div>
 
 <style>
-/* Background setup */
-.cracker-bg {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  background: radial-gradient(circle at center, #0b0b0b, #000);
-  overflow: hidden;
-}
-
-/* Circular image styling */
 .circle-image {
   width: 100%;
-  max-width: 500px;
-  aspect-ratio: 1 / 1;
+  max-width: 500px; /* Large on big screens */
+  aspect-ratio: 1 / 1; /* Keeps perfect circle */
   object-fit: cover;
   border-radius: 50%;
   border: 8px solid white;
-  box-shadow: 0 6px 25px rgba(255, 255, 255, 0.3);
-  position: relative;
-  z-index: 2;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-/* Crackers (firework) animation */
-.crackers::before,
-.crackers::after {
-  content: '';
-  position: absolute;
-  width: 5px;
-  height: 5px;
-  background: radial-gradient(circle, #ffdf00, #ff6f00);
-  border-radius: 50%;
-  animation: burst 1.5s infinite ease-out;
+.circle-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.4);
 }
 
-.crackers::after {
-  animation-delay: 0.7s;
-}
-
-/* Create multiple cracker particles */
-@keyframes burst {
-  0% {
-    box-shadow:
-      0 0 #ffdf00,
-      0 0 #ff6f00;
-    opacity: 0;
-  }
-  50% {
-    box-shadow:
-      100px -80px #ffdf00,
-      -90px 60px #ff6f00,
-      120px 100px #ff4500,
-      -120px -100px #ffff33,
-      60px 130px #ff1493;
-    opacity: 1;
-  }
-  100% {
-    box-shadow:
-      200px -150px transparent,
-      -200px 150px transparent,
-      250px 200px transparent,
-      -250px -200px transparent,
-      0 0 transparent;
-    opacity: 0;
-  }
-}
-
-/* Responsiveness */
+/* Optional: adjust size on smaller screens */
 @media (max-width: 768px) {
   .circle-image {
     max-width: 350px;
+    border-width: 6px;
   }
 }
+
 @media (max-width: 480px) {
   .circle-image {
     max-width: 280px;
+    border-width: 4px;
   }
 }
 </style>
+
 
 
         
@@ -1232,6 +1185,7 @@ function navHighlight() {
     </body>
 
 </html>
+
 
 
 
