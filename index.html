@@ -199,11 +199,10 @@
 </div>
 
 <style>
-/* === Animated Circular Border === */
 .circle-frame {
   position: relative;
   border-radius: 50%;
-  padding: 8px; /* Slightly thicker border */
+  padding: 5px; /* Border thickness */
   background: linear-gradient(270deg, #f74780, #ffffff, #c9c9c9);
   background-size: 400% 400%;
   animation: borderFlow 7s linear infinite;
@@ -212,69 +211,57 @@
   transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
 
-/* === Circle Image (Brighter + Full Visible) === */
 .circle-image {
   width: 100%;
-  max-width: 700px; /* Increased size for desktop */
+  max-width: 650px; /* Increased size */
   aspect-ratio: 1 / 1;
-  object-fit: cover; /* Keeps proportions nicely inside circle */
-  object-position: center 70%; /* Focus down a bit (less sky, more body) */
+  object-fit: cover;
+  object-position: center 70%;
   border-radius: 50%;
   display: block;
-  transition: transform 0.6s ease, filter 0.6s ease;
-  filter: brightness(1.05) contrast(1.05); /* Brighter + no dull look */
+  transition: transform 0.6s ease; /* Removed filter transition */
+  filter: brightness(1); /* Default brightness normal */
 }
 
-/* === Hover Effects === */
+/* Hover Effects */
 .circle-frame:hover .circle-image {
-  transform: scale(1.07);
-  filter: brightness(1.15) contrast(1.1);
+  transform: scale(1.08); /* Slightly more zoom */
+  filter: brightness(1.1); /* Brighten on hover */
 }
 
 .circle-frame:hover {
-  transform: scale(1.04);
-  box-shadow: 0 0 40px rgba(247, 71, 128, 0.4);
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
 }
 
-/* === Animated Gradient Border Movement === */
+/* Animated Gradient Border Flow */
 @keyframes borderFlow {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
 
-/* === Responsive Scaling === */
+/* Responsiveness */
 @media (max-width: 992px) {
-  .circle-image {
-    max-width: 550px;
-    object-position: center 70%;
-  }
+  .circle-image { max-width: 500px; object-position: center 70%; }
 }
-
 @media (max-width: 768px) {
-  .circle-image {
-    max-width: 380px;
-    object-position: center 65%;
-  }
+  .circle-image { max-width: 400px; object-position: center 65%; }
 }
-
 @media (max-width: 480px) {
-  .circle-image {
-    max-width: 280px;
-    object-position: center 65%;
-  }
+  .circle-image { max-width: 300px; object-position: center 65%; }
 }
 
-/* === Desktop Alignment + Bottom Visibility === */
+/* Desktop alignment and bottom visibility */
 @media (min-width: 992px) {
   .col-lg-4 {
     justify-content: center;
     padding-top: 20px;
-    padding-bottom: 120px; /* Ensures lower part is visible */
+    padding-bottom: 100px;
   }
 }
 </style>
-   
+
     </div>
 </div>
 <!-- Hero Header End -->
@@ -1267,6 +1254,7 @@ function navHighlight() {
     </body>
 
 </html>
+
 
 
 
