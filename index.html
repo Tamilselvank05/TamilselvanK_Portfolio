@@ -148,26 +148,47 @@
             
         </div>
         
-       <div class="col-lg-4 wow fadeInRight" data-wow-delay="0.2s" 
-             style="display: flex; justify-content: center; align-items: center;">
-          <img 
-            src="img/home.jpg" 
-            class="img-fluid" 
-            style="
-              width: 450px; 
-              height: 450px; 
-              object-fit: cover; 
-              border-radius: 50%; 
-              border: 8px solid white;
-              box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
-              transition: transform 0.4s ease, box-shadow 0.4s ease;
-            " 
-            alt="Home Image"
-            onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.4)';"
-            onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 6px 25px rgba(0,0,0,0.3)';"
-          >
-        </div>
-        
+       <div class="col-lg-4 wow fadeInRight d-flex justify-content-center align-items-center" data-wow-delay="0.2s">
+  <img 
+    src="img/home.jpg" 
+    alt="Home Image"
+    class="img-fluid circle-image"
+  >
+</div>
+
+<style>
+.circle-image {
+  width: 100%;
+  max-width: 500px; /* Large on big screens */
+  aspect-ratio: 1 / 1; /* Keeps perfect circle */
+  object-fit: cover;
+  border-radius: 50%;
+  border: 8px solid white;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.circle-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.4);
+}
+
+/* Optional: adjust size on smaller screens */
+@media (max-width: 768px) {
+  .circle-image {
+    max-width: 350px;
+    border-width: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .circle-image {
+    max-width: 280px;
+    border-width: 4px;
+  }
+}
+</style>
+
         
                 
     </div>
@@ -1162,6 +1183,7 @@ function navHighlight() {
     </body>
 
 </html>
+
 
 
 
