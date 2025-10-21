@@ -148,23 +148,28 @@
             
         </div>
         
-       <div class="col-lg-4 wow fadeInRight" data-wow-delay="0.2s" style="display: flex; justify-content: center; align-items: center;">
+       <div class="col-lg-4 wow fadeInRight" data-wow-delay="0.2s" 
+             style="display: flex; justify-content: center; align-items: center;">
           <img 
             src="img/home.jpg" 
             class="img-fluid" 
             style="
-              width: 300px; 
-              height: 300px; 
+              width: 450px; 
+              height: 450px; 
               object-fit: cover; 
               border-radius: 50%; 
-              box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-              border: 5px solid white;
+              border: 8px solid white;
+              box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+              transition: transform 0.4s ease, box-shadow 0.4s ease;
             " 
-            alt="Profile Image"
+            alt="Home Image"
+            onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.4)';"
+            onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 6px 25px rgba(0,0,0,0.3)';"
           >
         </div>
-
         
+        
+                
     </div>
 </div>
 <!-- Hero Header End -->
@@ -1157,5 +1162,6 @@ function navHighlight() {
     </body>
 
 </html>
+
 
 
